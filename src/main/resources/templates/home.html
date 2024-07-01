@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        .container{
+            margin: auto;
+            width: 50%;
+            padding: 30px;
+            background: #e2e2e2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 data-th-text="${name}">Welcome to Smart Contact Manager</h1>
+        <p>Address : <span data-th-text="${address}"></span></p>
+        <a data-th-href="${github}">View the Source Code repo</a>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi molestiae nulla assumenda vero iste ducimus deleniti non necessitatibus error saepe beatae recusandae corporis omnis nostrum vitae alias repudiandae, totam ullam cumque neque incidunt reiciendis esse. In maxime quam reiciendis rerum laborum est accusantium odio aliquam dolorem, ab id soluta ipsum!</p>
+    </div>
+</body>
+</html>
