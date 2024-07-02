@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>About Page</title>
+	</head>
+	<body>
+		<h1>This is About Page</h1>
+		<hr />
+		<!-- using fragment -->
+		<div
+			class="host-tag"
+			th:replace="${isLogin} ? 
+				~{fragments/base :: parent(~{::.logged_in})} 
+				: ~{fragments/base :: test(~{::#not_logged_in})}"
+		>
+			<div class="logged_in">
+				<h3>The USER is Logged In</h3>
+			</div>
+			<div id="not_logged_in">
+				<h3>The USER is NOT Logged In</h3>
+			</div>
+		</div>
+	</body>
+</html>

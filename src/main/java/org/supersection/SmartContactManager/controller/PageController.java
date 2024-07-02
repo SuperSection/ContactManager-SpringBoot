@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+
 @Controller
 public class PageController {
 
@@ -15,4 +16,16 @@ public class PageController {
         model.addAttribute("github", "https://github.com/SuperSection/ContactManager-SpringBoot.git");
         return "home";
     }
+
+    @GetMapping("about")
+    public String about(Model model) {
+        model.addAttribute("isLogin", true);
+        return "about";
+    }
+
+    @GetMapping("services")
+    public String services() {
+        return "services";
+    }
+    
 }
