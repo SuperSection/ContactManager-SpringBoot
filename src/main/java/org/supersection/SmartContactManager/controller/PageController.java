@@ -3,13 +3,11 @@ package org.supersection.SmartContactManager.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("home")
 public class PageController {
 
-    @GetMapping
+    @GetMapping("home")
     public String home(Model model) {
         System.out.println("Home page handler");
         model.addAttribute("name", "Substring Technologies");

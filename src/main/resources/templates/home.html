@@ -1,24 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <style>
-        .container{
-            margin: auto;
-            width: 50%;
-            padding: 30px;
-            background: #e2e2e2;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1 data-th-text="${name}">Welcome to Smart Contact Manager</h1>
-        <p>Address : <span data-th-text="${address}"></span></p>
-        <a data-th-href="${github}">View the Source Code repo</a>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi molestiae nulla assumenda vero iste ducimus deleniti non necessitatibus error saepe beatae recusandae corporis omnis nostrum vitae alias repudiandae, totam ullam cumque neque incidunt reiciendis esse. In maxime quam reiciendis rerum laborum est accusantium odio aliquam dolorem, ab id soluta ipsum!</p>
-    </div>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Home Page</title>
+		<link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css"  rel="stylesheet" />
+		<link rel="stylesheet" data-th-href="@{'css/output.css'}" />
+	</head>
+	<body>
+		<div class="container mx-auto w-1/2 bg-gray-200 p-8 mt-12 text-base flex flex-col space-y-3">
+			<h1 class="text-3xl font-bold" data-th-text="${name}"></h1>
+			<p>
+				<strong>Address : </strong><span th:text="${address}"></span>
+			</p>
+			<a class="font-medium text-blue-600" data-th-href="${github}">
+				Click here to Open the Source Code Repo
+			</a>
+			<p class="text-gray-500">
+				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi
+				molestiae nulla assumenda vero iste ducimus deleniti non necessitatibus
+				error saepe beatae recusandae corporis omnis nostrum vitae alias
+				repudiandae, totam ullam cumque neque incidunt reiciendis esse. In
+				maxime quam reiciendis rerum laborum est accusantium odio aliquam
+				dolorem, ab id soluta ipsum!
+			</p>
+			<button class="px-6 py-2 rounded bg-blue-700 text-white w-fit hover:bg-blue-600 transition">
+				Click Here
+			</button>
+		</div>
+		
+		<script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+	</body>
 </html>
