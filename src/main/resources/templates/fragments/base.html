@@ -1,10 +1,46 @@
-<div class="parent-fragment" th:fragment="parent(content)">
-	<h2>This is parent fragment</h2>
-	<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem, at.</p>
-	<div th:replace="${content}"></div>
-</div>
+<!DOCTYPE html>
+<html
+	lang="en"
+	xmlns:th="http://www.thymeleaf.org"
+	th:fragment="parent(content, title, script)"
+>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title data-th-replace="${title}">Smart Contact Manager</title>
+		<link rel="stylesheet" data-th-href="@{'/css/output.css'}" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<!-- common header -->
+		<nav class="p-4">
+			<ul class="flex items-center justify-end space-x-5">
+				<li>
+					<a data-th-href="@{'/home'}">Home</a>
+				</li>
+				<li>
+					<a data-th-href="@{'/about'}">About</a>
+				</li>
+				<li>
+					<a data-th-href="@{'/services'}">Services</a>
+				</li>
+			</ul>
+		</nav>
 
+		<!-- main content -->
+		<div class="p-4">
+			<section data-th-replace="${content}"></section>
+		</div>
 
-<div th:fragment="test(content)">
-	<div th:replace="${content}"></div>
-</div>
+		<!-- common footer -->
+        <footer class="p-3">
+            Footer: &copy;Super Section | Spring Boot - 2024 July | Smart Contact Manager 
+        </footer>
+
+		<script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+		<th:block data-th-replace="${script}"></th:block>
+	</body>
+</html>
